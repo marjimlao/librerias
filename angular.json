@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "librerias2": {
+    "librerias": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/librerias2",
+            "outputPath": "dist/librerias",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "librerias2:build"
+            "browserTarget": "librerias:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "librerias2:build:production"
+              "browserTarget": "librerias:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "librerias2:build"
+            "browserTarget": "librerias:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "librerias2-e2e": {
+    "librerias-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "librerias2:serve"
+            "devServerTarget": "librerias:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "librerias2:serve:production"
+              "devServerTarget": "librerias:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "librerias2"
+  "defaultProject": "librerias"
 }
