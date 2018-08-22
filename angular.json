@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "mi-libreria": {
+      "root": "projects/mi-libreria",
+      "sourceRoot": "projects/mi-libreria/src",
+      "projectType": "library",
+      "prefix": "ml",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mi-libreria/tsconfig.lib.json",
+            "project": "projects/mi-libreria/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/mi-libreria/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mi-libreria/src/test.ts",
+            "tsConfig": "projects/mi-libreria/tsconfig.spec.json",
+            "karmaConfig": "projects/mi-libreria/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mi-libreria/tsconfig.lib.json",
+              "projects/mi-libreria/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "librerias"
